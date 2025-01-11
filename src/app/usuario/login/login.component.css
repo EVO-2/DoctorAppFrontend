@@ -1,0 +1,61 @@
+.full-width {
+    width: 100%;
+}
+.img-fluid {
+    width: 100%;
+}
+.full-width {
+    width: 100%;
+    display: block; /* Asegura que el <h1> se comporta como un bloque */
+    text-align: center; /* Si deseas centrar el texto */
+  }
+ /* Fuente Cursiva */
+h1 {
+    font-family: 'Vivaldi', cursive; /* Fuente personalizada */
+    font-size: 5rem; /* Tamaño de la fuente */
+    text-align: center; /* Centra el texto */
+    color: white; /* Color del texto */
+    background-color: #0d6efd; /* Fondo azul para el badge */
+    padding: 20px;
+    width: 60%; /* El texto ocupa el 80% del espacio */
+    margin: 0 auto; /* Centra el h1 en su contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    display: inline-block; /* Necesario para la animación */
+    overflow: hidden;
+}
+
+/* Efecto de "bandera" para cada letra */
+h1 span {
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+}
+
+/* Animación de movimiento tipo bandera */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0); /* Posición original */
+    }
+    25% {
+        transform: translateY(-10px); /* Sube 10px */
+    }
+    50% {
+        transform: translateY(10px); /* Baja 10px */
+    }
+    75% {
+        transform: translateY(-5px); /* Sube un poco más */
+    }
+}
+
+/* Intervalo de tiempo distinto para cada letra */
+h1 span:nth-child(odd) {
+    animation-delay: 0.2s; /* Retraso para las letras impares */
+}
+
+h1 span:nth-child(even) {
+    animation-delay: 0.4s; /* Retraso para las letras pares */
+}
+
+  
+  
+  
