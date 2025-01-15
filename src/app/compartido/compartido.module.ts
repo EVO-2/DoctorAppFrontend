@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from '../material/material.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 
 
@@ -15,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    LayoutRoutingModule
   ],
   exports: [
     ReactiveFormsModule, FormsModule, HttpClientModule,
