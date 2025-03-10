@@ -25,7 +25,12 @@ export class ModalEspecialidadComponent implements OnInit{
       nombreEspecialidad: ['', Validators.required],
       descripcion: ['', Validators.required],
       estado: ['1', Validators.required]
-    })
+    });
+
+    if(this.datosEspecialidad != null) {
+      this.titulo = 'Editar';
+      this.nombreBoton = 'Actualizar';
+    }
 
   }
   
@@ -42,7 +47,7 @@ export class ModalEspecialidadComponent implements OnInit{
 
   crearModificarEspecialidad(){
     const especialidad: especialidad = {
-      id: this.datosEspecialidad.id == null ? 0 : this.datosEspecialidad.id,
+      id: this.datosEspecialidad == null ? 0 : this.datosEspecialidad.id,
       nombreEspecialidad: this.formEspecialidad.value.nombreEspecialidad,
       descripcion: this.formEspecialidad.value.descripcion,
       estado: parseInt(this.formEspecialidad.value.estado)
@@ -64,7 +69,10 @@ export class ModalEspecialidadComponent implements OnInit{
             this._compartidoServicio.mostrarAlerta('No se pudo crear la especialidad',
           'Error!');
         },
-        error: (e) => {}
+        error: (e) => {
+          this._compartidoServicio.mostrarAlerta(e.error.errores,
+            'Error!');
+        }
       })
     }
     else {
