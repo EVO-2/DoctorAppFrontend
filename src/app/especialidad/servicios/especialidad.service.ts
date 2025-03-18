@@ -16,7 +16,11 @@ export class EspecialidadService {
   constructor(private http: HttpClient) { }
 
   lista() : Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(`${this.baseUrl}`)
+    return this.http.get<ApiResponse>(`${this.baseUrl}`);
+  }
+
+  listaActivos() : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(`${this.baseUrl}listadoActivos`);
   }
 
   crear(request: especialidad): Observable<ApiResponse> {
